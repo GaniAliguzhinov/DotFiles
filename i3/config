@@ -215,7 +215,7 @@ bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Desktop/screenshots/$f'
 # --- Keymap
 # --------------------  
 
-exec "setxkbmap -layout us,de"
+exec "setxkbmap -layout us,ru"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # --------------------  
