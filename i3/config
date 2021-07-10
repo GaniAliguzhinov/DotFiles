@@ -66,7 +66,7 @@ for_window [class="^Terminator$" title="^Terminator Preferences$"] floating enab
 bindsym $mod+Shift+q kill
 
 # -- start dmenu (a program launcher)
- bindsym $mod+d exec "rofi -modi window,drun,run -show drun -sidebar-mode -terminal terminator -theme solarized -font 'ShureTechMono Nerd Font 10'"
+ bindsym $mod+d exec "rofi -modi window,drun,run -theme solarized -font 'ShureTechMono Nerd Font 10' -show drun -sidebar-mode -terminal terminator -icon-theme 'Papirus' -show-icons"
 
 # -- Navigation
 # change focus
