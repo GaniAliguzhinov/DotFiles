@@ -8,7 +8,7 @@ exec_always "setxkbmap -layout us,ru -option grp:alt_shift_toggle"
 # --- numlock
 # --------------------  
 
-exec_always --no-startup-id numlockx off
+exec_always --no-startup-id numlockx on
 
 # --------------------  
 # --- i3 management
