@@ -1,6 +1,6 @@
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- i3 management
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 exec "/usr/lib/polkit-kde-authentication-agent-1"
 
@@ -28,9 +28,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- Windows
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 # -- transp
 
@@ -158,32 +158,32 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- Sound
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 bindsym $mod+F5 exec pactl set-sink-mute @DEFAULT_SINK@ toggle # Mute
 bindsym $mod+F6 exec pactl set-sink-volume @DEFAULT_SINK@ -5%  # Up
 bindsym $mod+F7 exec pactl set-sink-volume @DEFAULT_SINK@ +5%  # Down
 set $refresh_i3status killall -SIGUSR1 i3status
 
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- Screen Lock
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- Network
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 exec --no-startup-id nm-applet
 
 
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- Theme
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 exec --no-startup-id feh --bg-fill "/home/${USER}/.config/wallpaper.png"
 
@@ -201,12 +201,25 @@ client.background        #000000
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 # --- Utilities
-# ----------------------------------------------------------------------------------------------------  
+# --------------------  
 
 # screenshot
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f ~/Desktop/screenshots/'
 # scrot & gimp - select window or rectangle
 bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Desktop/screenshots/$f'
+
+# --------------------  
+# --- Keymap
+# --------------------  
+
+exec "setxkbmap -layout us,de"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
+
+# --------------------  
+# --- numlock
+# --------------------  
+
+exec_always --no-startup-id numlockx off
