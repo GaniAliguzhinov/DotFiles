@@ -173,6 +173,7 @@ assign [class="gitbeeline-nativefier-*"] $ws6
 assign [class="microsoft*"] $ws7
 assign [class="Microsoft*"] $ws7
 assign [class="DBeaver"] $ws8
+assign [class="firefox"] $ws3
 
 
 # --------------------  
