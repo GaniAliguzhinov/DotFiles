@@ -170,6 +170,8 @@ assign [class="Gnome-terminal"] $ws9
 assign [class="outlook-nativefier-*"] $ws4
 assign [class="jira-nativefier-*"] $ws5
 assign [class="gitbeeline-nativefier-*"] $ws6
+assign [class="microsoft teams*"] $ws7
+assign [class="DBeaver"] $ws8
 
 
 # --------------------  
