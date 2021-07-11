@@ -9,7 +9,6 @@ exec_always "setxkbmap -layout us,ru -option grp:alt_shift_toggle"
 # --------------------  
 
 exec_always --no-startup-id numlockx on
-
 # --------------------  
 # --- i3 management
 # --------------------  
@@ -222,3 +221,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym Print exec scrot -e 'mv $f ~/Desktop/screenshots/'
 # scrot & gimp - select window or rectangle
 bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Desktop/screenshots/$f'
+
