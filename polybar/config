@@ -56,7 +56,7 @@ font-1 = ShureTechMono Nerd Font:style=Regular
 font-2 = "Siji:pixelsize=10;1"
 
 modules-left = i3
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature temperatureAMD date powermenu
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan globalip ping vpn battery temperature temperatureAMD date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -86,7 +86,7 @@ label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 10
 
 mount-0 = /
 
@@ -210,17 +210,35 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
-type = internal/network
-interface = enp40s0
-interval = 3.0
+[module/vpn]
+type = custom/script
+exec = "if [[ $(pgrep -x "openconnect|openvpn|vpnc|snx") ]]; then echo "ON"; else echo "OFF "; fi"
+interval = 5
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{A1:nm-connection-editor & disown:}%local_ip%%{A}
+click-left = gnome-terminal -e "bash -c \"~/.config/vpn/connect.sh; exec bash\"" & disown
 
-format-disconnected =
+format-underline = #f90000
+format-prefix = "ﯴ VPN "
+format-prefix-foreground = ${colors.foreground-alt}
+
+[module/globalip]
+type = custom/script
+exec = "IP=$(curl ifconfig.me -s); echo "$IP""
+click-left = nm-connection-editor
+interval = 10
+
+format-underline = #55aa55
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+[module/ping]
+type = custom/script
+exec = "ping 8.8.8.8 -c 1 | grep from | awk 'BEGIN{FS="time="} {print $2}'"
+interval = 2
+
+format-underline = #4bffdc
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
