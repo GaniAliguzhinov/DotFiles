@@ -219,7 +219,7 @@ click-left = setsid gnome-terminal -e "bash -c \"~/.config/vpn/connect.sh\"" &
 click-right = ~/.config/vpn/disconnect.sh
 
 format-underline = #f90000
-format-prefix = "ﯴ VPN "
+format-prefix = "ﯴ "
 format-prefix-foreground = ${colors.foreground-alt}
 
 [module/globalip]
