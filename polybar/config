@@ -151,12 +151,12 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 [module/xbacklight]
-type = internal/backlight
+type = internal/xbacklight
 
 format = <label> <bar>
 label = BL
 
-bar-width = 10
+bar-width = 6
 bar-indicator = |
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
