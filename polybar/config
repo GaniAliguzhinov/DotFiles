@@ -56,7 +56,7 @@ font-1 = ShureTechMono Nerd Font:style=Regular
 font-2 = "Siji:pixelsize=10;1"
 
 modules-left = i3
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan globalip ping vpn battery temperature temperatureAMD date powermenu
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan ping vpn battery temperature temperatureAMD date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -259,29 +259,15 @@ label = %date% / %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+format-volume = <label-volume>
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 
 label-muted-foreground = #666
+click-right = pavucontrol
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = '─'
-bar-volume-fill-font = 2
-bar-volume-empty = '─'
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+format-volume-underline = #f50a4d
 
 [module/alsa]
 type = internal/alsa
