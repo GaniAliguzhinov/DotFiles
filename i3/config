@@ -167,6 +167,10 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 
 assign [class="Gnome-terminal"] $ws9
 
+assign [class="outlook-nativefier-*"] $ws4
+assign [class="jira-nativefier-*"] $ws5
+assign [class="gitbeeline-nativefier-*"] $ws6
+
 
 # --------------------  
 # --- Sound
