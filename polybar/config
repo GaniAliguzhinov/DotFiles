@@ -213,9 +213,10 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/vpn]
 type = custom/script
 exec = "if [[ $(pgrep -x "openconnect|openvpn|vpnc|snx") ]]; then echo "ON"; else echo "OFF "; fi"
-interval = 5
+interval = 2
 
-click-left = gnome-terminal -e "bash -c \"~/.config/vpn/connect.sh; exec bash\"" & disown
+click-left = setsid gnome-terminal -e "bash -c \"~/.config/vpn/connect.sh\"" &
+click-right = ~/.config/vpn/disconnect.sh
 
 format-underline = #f90000
 format-prefix = "ﯴ VPN "
